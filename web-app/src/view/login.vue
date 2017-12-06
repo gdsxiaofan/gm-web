@@ -1,33 +1,28 @@
 <template>
   <div class="login">
-    <mt-header title="账户登录">
-      <router-link slot="left" to="/home">
-        <mt-button icon="back">返回</mt-button>
-      </router-link>
-      <router-link to="/register" slot="right">
-        <mt-button>注册</mt-button>
-      </router-link>
+    <mt-header title="账户登录" style="-webkit-transform: translateZ(0);background: -webkit-gradient(linear,left top,right top,from(#0af),to(#0085ff))" slot="header" >
+      <!--<router-link slot="left" to="/home">-->
+        <!--<mt-button icon="back">返回</mt-button>-->
+      <!--</router-link>-->
+      <!--<router-link to="/register" slot="right">-->
+        <!--<mt-button>注册</mt-button>-->
+      <!--</router-link>-->
     </mt-header>
     <form :model="loginForm" class="loginForm">
+
+      <mt-field label="用户名：" placeholder="请输入用户名" v-model="loginForm.username" ></mt-field>
+
+      <mt-field label="密码：" placeholder="请输入密码" v-model="loginForm.password"></mt-field>
+
       <section>
-        <div>
-          <input type="text" placeholder="用户名" v-model="loginForm.username">
-        </div>
+        <mt-button style="background: #26a2ff" @click="loginSubmit">登录</mt-button>
       </section>
-      <section>
-        <div>
-          <input type="password" placeholder="密码" v-model="loginForm.password">
-        </div>
-      </section>
-      <section>
-        <mt-button @click="loginSubmit">登录</mt-button>
-      </section>
-      <section class="test">
-        <p>测试：</p>
-        <p>用户名/密码:2014874236/123456</p>
-        <p>用户名/密码:2014874239/123456</p>
-        <p>用户名/密码:2014874207/654321</p>
-      </section>
+      <!--<section class="test">-->
+        <!--<p>测试：</p>-->
+        <!--<p>用户名/密码:2014874236/123456</p>-->
+        <!--<p>用户名/密码:2014874239/123456</p>-->
+        <!--<p>用户名/密码:2014874207/654321</p>-->
+      <!--</section>-->
     </form>
     <!-- 验证码 -->
     <!-- <div class="img_change_img">

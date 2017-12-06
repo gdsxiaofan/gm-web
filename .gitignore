@@ -1,2 +1,4 @@
 # Created by .ignore support plugin (hsz.mobi)
 /.idea/
+/web-app/node_modules/
+/web-oa/node_modules/
