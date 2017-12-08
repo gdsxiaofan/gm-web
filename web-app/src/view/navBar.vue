@@ -22,7 +22,7 @@
 		  	<mt-tab-item id="user">
 		  		<router-link to="/personal">
 			  		<p><i class="fa fa-user-o" aria-hidden="true"></i></p>
-			    	<p>我的</p>
+			    	<p>我的信息</p>
 			    </router-link>
 		  	</mt-tab-item>
 		</mt-tabbar>
@@ -38,7 +38,7 @@
 				fixed:true
 			}
 		}
-	} 
+	}
 </script>
 <style>
 	.navBar .nav p{

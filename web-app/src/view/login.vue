@@ -1,27 +1,27 @@
 <template>
   <div class="login">
-    <mt-header title="账户登录" style="-webkit-transform: translateZ(0);background: -webkit-gradient(linear,left top,right top,from(#0af),to(#0085ff))" slot="header" >
+    <mt-header title="账户登录"
+               style="-webkit-transform: translateZ(0);background: -webkit-gradient(linear,left top,right top,from(#0af),to(#0085ff))"
+               slot="header">
       <!--<router-link slot="left" to="/home">-->
-        <!--<mt-button icon="back">返回</mt-button>-->
+      <!--<mt-button icon="back">返回</mt-button>-->
       <!--</router-link>-->
       <!--<router-link to="/register" slot="right">-->
-        <!--<mt-button>注册</mt-button>-->
+      <!--<mt-button>注册</mt-button>-->
       <!--</router-link>-->
     </mt-header>
     <form :model="loginForm" class="loginForm">
 
-      <mt-field label="用户名：" placeholder="请输入用户名" v-model="loginForm.username" ></mt-field>
-
-      <mt-field label="密码：" placeholder="请输入密码" v-model="loginForm.password"></mt-field>
-
+        <mt-field label="用户名：" placeholder="请输入用户名" v-model="loginForm.username"></mt-field>
+        <mt-field label="密码：" placeholder="请输入密码" v-model="loginForm.password"></mt-field>
       <section>
         <mt-button style="background: #26a2ff" @click="loginSubmit">登录</mt-button>
       </section>
       <!--<section class="test">-->
-        <!--<p>测试：</p>-->
-        <!--<p>用户名/密码:2014874236/123456</p>-->
-        <!--<p>用户名/密码:2014874239/123456</p>-->
-        <!--<p>用户名/密码:2014874207/654321</p>-->
+      <!--<p>测试：</p>-->
+      <!--<p>用户名/密码:2014874236/123456</p>-->
+      <!--<p>用户名/密码:2014874239/123456</p>-->
+      <!--<p>用户名/密码:2014874207/654321</p>-->
       <!--</section>-->
     </form>
     <!-- 验证码 -->
@@ -38,8 +38,8 @@
   // 首页
   import Home from '@/view/home'
   import store from '../store'
-  import {api} from '../global/api'
-  import {MessageBox} from 'mint-ui'
+  import { api } from '../global/api'
+  import { MessageBox } from 'mint-ui'
 
   export default {
     data () {
@@ -51,35 +51,35 @@
       }
     },
     mounted: function () {
-      this.getData();
+      this.getData()
       // this.getCaptchas();
     },
     methods: {
       getData: function () {
         this.$http.get(api.login).then((response) => {
-          console.log("登录页面response的值", response);
-          this.form = response.data;
+          console.log('登录页面response的值', response)
+          this.form = response.data
         })
       },
       loginSubmit: function () {
-        console.log("this.loginForm.username：", this.loginForm.username);
-        console.log("this.loginForm.password：", this.loginForm.password);
-        var flag = 0;
+        console.log('this.loginForm.username：', this.loginForm.username)
+        console.log('this.loginForm.password：', this.loginForm.password)
+        var flag = 0
         for (let i = 0; i < this.form.length; i++) {
           if (this.form[i].username === this.loginForm.username && this.form[i].password == this.loginForm.password) {
-            flag = 1;
-            break;
+            flag = 1
+            break
           }
         }
         if (flag === 0) {
-          MessageBox.alert("用户名或密码不正确", "提示");
-          this.loginForm.username = '';
-          this.loginForm.password = '';
+          MessageBox.alert('用户名或密码不正确', '提示')
+          this.loginForm.username = ''
+          this.loginForm.password = ''
         }
         else {
-          this.$router.push({path: '/', component: Home});
+          this.$router.push({path: '/', component: Home})
           // this.loginStatus=true;
-          store.dispatch('setloginStatus', true);
+          store.dispatch('setloginStatus', true)
           // console.log("login页面的loginStatus值",this.loginStatus);
         }
 

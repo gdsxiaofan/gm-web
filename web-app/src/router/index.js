@@ -5,6 +5,8 @@ import Router from 'vue-router'
 import NavBar from '@/view/navBar'
 // 首页
 import Home from '../view/home'
+// 首页
+import Main from '../view/main'
 // 分类
 import Classify from '@/view/classify'
 // 用户注册
@@ -24,6 +26,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     		{ path:'/home',component:Home },
+    		{ path:'/main',component:Main },
         { path:'/dragonDetail',component:DragonDetail },
     		{ path:'/classify',component:Classify },
         { path:'/shopping',component:Shopping },

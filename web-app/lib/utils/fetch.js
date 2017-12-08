@@ -1,7 +1,6 @@
 import axios from 'axios';
 // import store from 'src/store';
-import {Message} from 'iview';
-import {Modal} from 'iview';
+import { MessageBox } from 'mint-ui'
 import router from '../../routes'
 //发送表单请求需要序列化
 import qs from 'qs'
@@ -64,8 +63,7 @@ fetch.interceptors.response.use(
   error => {
     if (error.response.status === 401) {
       router.replace({path: '/login', query: {redirect: router.currentRoute.fullPath}})
-      Message.error("请重新登录", 3);
-      Modal.remove()
+      MessageBox.error("请重新登录", 3);
       return Promise.reject("请重新登录");
     }
     Message.error('err' + error);

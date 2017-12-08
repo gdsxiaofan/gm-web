@@ -11,6 +11,7 @@
 			<div>
 				<ul>
 					<li v-for="item in list.items">
+
 						<router-link to="">
 							<p><img :src="item.img"></p>
 							<p class="text">{{ item.text }}</p>

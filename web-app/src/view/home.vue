@@ -65,7 +65,7 @@
 								<p class="product-p1">{{ product.bigContent }}</p>
 								<p class="product-p2">
 									<span v-html="product.smallContent"></span>
-									<span class="money"><i class="fa fa-jpy" aria-hidden="true"></i>{{ product.price.toFixed(2) }}</span> 
+									<span class="money"><i class="fa fa-jpy" aria-hidden="true"></i>{{ product.price.toFixed(2) }}</span>
 									<!-- 保留两位小数点  -->
 								</p>
 							<!-- </div> -->
@@ -74,7 +74,6 @@
 				</div>
 			</div>
 		</section>
-		<NavBar></NavBar>
 	</div>
 </template>
 <script>
@@ -133,7 +132,7 @@
 			}
 		}
 	}
-	
+
 </script>
 <style >
 	.home{
@@ -235,7 +234,7 @@
 	.home .part2 .part2-img,
 	.home .part4 .part4-content .newProducts{
 		width: 100%;
-		background: #fff; 
+		background: #fff;
 	}
 	.home .part2 p{
 		width: 45%;
